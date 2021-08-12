@@ -79,6 +79,7 @@ const requireAuth = async (fn, targetUrl) => {
 const callApi = async () => {
   try {
     const token = await auth0.getTokenSilently();
+    console.log(token);
 
     const response = await fetch(apiEndpoint, {
       headers: {Authorization: `Bearer ${token}`}
